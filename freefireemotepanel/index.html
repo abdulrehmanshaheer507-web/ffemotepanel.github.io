@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔥 Free Fire Emote Bot | Shani Store Official Emote Panel</title>
+  <meta name="description" content="Send any Free Fire emote directly to your lobby using your UID and Team Code. Free Fire Emote Bot tool by Shani Store.">
+  <meta name="theme-color" content="#FF6B00">
+  
+  <!-- Favicon / Fire Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22 0%22 100%22 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+  
+  <!-- Google Fonts: Orbitron & Rajdhani -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Particle & Grid Overlay -->
+  <canvas id="particles-canvas"></canvas>
+  <div class="cyber-grid-overlay"></div>
+
+  <!-- Confetti Canvas for Victory Celebrations -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="app-container">
+    
+    <!-- NAVIGATION BAR -->
+    <header class="navbar">
+      <div class="nav-inner">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon-wrap">🔥</div>
+          <div class="brand-text-wrap">
+            <div class="brand-title">
+              FF EMOTE PANEL
+              <span class="badge-free">VIP v2.6</span>
+            </div>
+            <div class="brand-subtitle-mini">
+              By <span>Shani Store</span> • Instant Lobby Injector
+            </div>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="#how-to-use" class="nav-link">How to Use</a></li>
+            <li><a href="#live-stats" class="nav-link">Stats</a></li>
+            <li><a href="#live-feed" class="nav-link">Live Feed</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+          </ul>
+        </nav>
+
+        <!-- Right Action Items -->
+        <div class="nav-actions">
+          <div class="server-status-pill">
+            <span class="pulse-dot"></span>
+            <span>SERVERS ONLINE</span>
+          </div>
+          <button id="soundToggleBtn" class="sound-toggle-btn" title="Toggle Sound FX" aria-label="Toggle Sound">
+            🔊
+          </button>
+          <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open Navigation Menu">
+            ☰
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="shani-tagline-wrap">
+        <span class="live-flame">🔥</span>
+        <span class="shani-tagline">Free Fire Emote Bot by Shani Store</span>
+        <span class="live-flame">🔥</span>
+      </div>
+
+      <h1 class="hero-title">
+        🔥 <span class="fire-text">FREE FIRE EMOTE BOT</span> 🔥
+      </h1>
+
+      <p class="hero-subtitle">
+        Send rare, legendary, and dance emotes to any <strong>Free Fire lobby</strong> instantly without diamond top-ups or mod apps!
+      </p>
+
+      <div class="live-stream-badge">
+        <span class="pulse-dot"></span>
+        <span>Anti-Ban Protected • Safe Gateway Sync • Instant Execution</span>
+      </div>
+    </section>
+
+    <!-- MAIN EMOTE BOT PANEL (CORE INTERACTIVE CARD) -->
+    <main class="main-panel-section" id="bot-panel">
+      <div class="panel-card">
+        
+        <!-- Panel Header -->
+        <div class="panel-header">
+          <div class="panel-header-title">
+            <span style="font-size: 1.5rem;">🎮</span>
+            <h2>LOBBY EMOTE DISPATCHER</h2>
+            <span class="panel-version">PRO BOT</span>
+          </div>
+          <div class="panel-header-status">
+            <span>Ping:</span>
+            <span class="ping-tag">24ms (Optimal)</span>
+          </div>
+        </div>
+
+        <!-- INPUTS GRID (Server, UID, Team Code) -->
+        <div class="bot-inputs-grid">
+          
+          <!-- 1. Server Selection -->
+          <div class="input-group">
+            <label for="serverSelect" class="input-label">
+              <span>Select Region / Server</span>
+              <span class="input-hint">Auto Routing</span>
+            </label>
+            <div class="input-wrapper">
+              <span class="input-icon">🌐</span>
+              <select id="serverSelect" class="cyber-select">
+                <option value="IND" selected>IND - India Server (Fastest)</option>
+                <option value="BD">BD - Bangladesh Server</option>
+                <option value="BR">BR - Brazil Server</option>
+                <option value="NA">NA - North America Server</option>
+                <option value="SAC">SAC - South America Central</option>
+                <option value="SEA">SEA - South East Asia</option>
+                <option value="VN">VN - Vietnam Server</option>
+                <option value="EU">EU - Europe Server</option>
+                <option value="ME">ME - Middle East Server</option>
+              </select>
+            </div>
+            <div class="validation-feedback valid">✓ Connected to cluster</div>
+          </div>
+
+          <!-- 2. Free Fire UID Input -->
+          <div class="input-group">
+            <label for="uidInput" class="input-label">
+              <span>Your Free Fire UID</span>
+              <span class="input-hint">9-12 Digits</span>
+            </label>
+            <div class="input-wrapper">
+              <span class="input-icon">🆔</span>
+              <input 
+                type="text" 
+                id="uidInput" 
+                class="cyber-input" 
+                placeholder="e.g. 1049281729" 
+                maxlength="14"
+                autocomplete="off"
+              >
+              <button type="button" id="randomUidBtn" class="quick-action-btn" title="Fill Sample UID">Demo UID</button>
+            </div>
+            <div id="uidFeedback" class="validation-feedback">Enter your numeric game UID</div>
+          </div>
+
+          <!-- 3. Lobby Team Code Input -->
+          <div class="input-group">
+            <label for="teamCodeInput" class="input-label">
+              <span>Lobby Team Code</span>
+              <span class="input-hint">From FF Lobby</span>
+            </label>
+            <div class="input-wrapper">
+              <span class="input-icon">👥</span>
+              <input 
+                type="text" 
+                id="teamCodeInput" 
+                class="cyber-input" 
+                placeholder="e.g. 4829104" 
+                maxlength="10"
+                autocomplete="off"
+              >
+              <button type="button" id="randomCodeBtn" class="quick-action-btn" title="Generate Demo Team Code">Demo Code</button>
+            </div>
+            <div id="teamCodeFeedback" class="validation-feedback">Generate code in lobby and paste here</div>
+          </div>
+
+        </div>
+
+        <!-- EMOTE SELECTION SECTION -->
+        <div class="emote-selection-wrap">
+          <div class="emote-section-top">
+            <div class="section-title">
+              <span>Choose Your Emote</span>
+              <span class="badge-count">24 Available</span>
+            </div>
+
+            <!-- Filter tabs & Search Bar -->
+            <div class="emote-controls">
+              <div class="filter-pills">
+                <button type="button" class="filter-pill active" data-category="all">All</button>
+                <button type="button" class="filter-pill" data-category="dance">Dances</button>
+                <button type="button" class="filter-pill" data-category="legendary">Legendary</button>
+                <button type="button" class="filter-pill" data-category="action">Action</button>
+                <button type="button" class="filter-pill" data-category="fun">Fun</button>
+              </div>
+              <input type="text" id="searchEmoteInput" class="search-emote-input" placeholder="🔍 Search emote..." autocomplete="off">
+            </div>
+          </div>
+
+          <!-- The Emote Grid: 20+ Clickable Cards -->
+          <div class="emote-grid custom-scrollbar" id="emoteGrid">
+            <!-- Dynamically populated by script.js -->
+          </div>
+        </div>
+
+        <!-- SELECTED EMOTE SUMMARY BAR & SEND BUTTON -->
+        <div class="action-section">
+          
+          <div class="selected-preview-card">
+            <div class="preview-left">
+              <div class="preview-icon" id="selectedPreviewIcon">🕺</div>
+              <div class="preview-info">
+                <span class="preview-label">Selected Emote</span>
+                <span class="preview-name" id="selectedPreviewName">Groove & Move</span>
+              </div>
+            </div>
+            <div class="preview-meta">
+              <span id="selectedPreviewCode">ID: #FF-4091 • EPIC</span>
+              <span>Cooldown: <strong>Ready</strong></span>
+            </div>
+          </div>
+
+          <!-- BIG GLOWING SEND EMOTE BUTTON -->
+          <button type="button" id="sendEmoteBtn" class="send-emote-btn">
+            <div class="btn-pulse-glow"></div>
+            <span>🔥 SEND EMOTE 🔥</span>
+          </button>
+
+          <div class="anti-ban-note">
+            <span>🛡️</span>
+            <span>Security Layer: <strong>Anti-Ban Active</strong> (Safe memory buffer injection)</span>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+    <!-- STATS COUNTER BAR -->
+    <section class="stats-section" id="live-stats">
+      <div class="stats-grid">
+        
+        <div class="stat-card">
+          <div class="stat-icon-wrap">⚡</div>
+          <div class="stat-content">
+            <div class="stat-counter" id="statSentToday">48,291</div>
+            <div class="stat-label">Emotes Sent Today</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-wrap">👥</div>
+          <div class="stat-content">
+            <div class="stat-counter" id="statActiveUsers">3,412</div>
+            <div class="stat-label">Active Users Online</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-wrap">🎭</div>
+          <div class="stat-content">
+            <div class="stat-counter" id="statTotalEmotes">150+</div>
+            <div class="stat-label">Total Emotes In Bot</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-wrap">🎯</div>
+          <div class="stat-content">
+            <div class="stat-counter" id="statSuccessRate">99.8%</div>
+            <div class="stat-label">Delivery Success Rate</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HOW TO USE SECTION -->
+    <section class="how-to-use-section" id="how-to-use">
+      <div class="section-headline-wrap">
+        <div class="section-tag">Quick Guide</div>
+        <h2 class="section-main-title">HOW TO USE THE EMOTE BOT</h2>
+      </div>
+
+      <div class="steps-grid">
+        
+        <div class="step-card">
+          <span class="step-number">STEP 01</span>
+          <div class="step-icon">📱</div>
+          <h3 class="step-title">Join a Lobby</h3>
+          <p class="step-desc">Open Garena Free Fire on your mobile or emulator and enter or create any squad or duo lobby.</p>
+        </div>
+
+        <div class="step-card">
+          <span class="step-number">STEP 02</span>
+          <div class="step-icon">📋</div>
+          <h3 class="step-title">Copy Team Code</h3>
+          <p class="step-desc">Tap the invite code at top of the lobby screen and copy the 5-8 digit Team Code.</p>
+        </div>
+
+        <div class="step-card">
+          <span class="step-number">STEP 03</span>
+          <div class="step-icon">⌨️</div>
+          <h3 class="step-title">Enter UID & Code</h3>
+          <p class="step-desc">Paste your game UID and the copied Team Code into the dispatcher panel inputs above.</p>
+        </div>
+
+        <div class="step-card">
+          <span class="step-number">STEP 04</span>
+          <div class="step-icon">🕺</div>
+          <h3 class="step-title">Select Emote</h3>
+          <p class="step-desc">Choose any of the 24+ unlocked emotes like Thug Life, Victory Royale, or Flowers of Love.</p>
+        </div>
+
+        <div class="step-card">
+          <span class="step-number">STEP 05</span>
+          <div class="step-icon">🚀</div>
+          <h3 class="step-title">Send & Enjoy</h3>
+          <p class="step-desc">Click the Send Emote button! Watch the injection console finish and amaze your lobby friends!</p>
+        </div>
+
+      </div>
+
+      <div class="pro-tip-box">
+        <div class="pro-tip-icon">💡</div>
+        <div class="pro-tip-text">
+          <strong>Pro Gaming Tip:</strong> Keep your Free Fire game active in the lobby while sending emotes to ensure real-time visual synchronisation with your squad mates.
+        </div>
+      </div>
+    </section>
+
+    <!-- RECENT ACTIVITY FEED -->
+    <section class="activity-section" id="live-feed">
+      <div class="activity-card">
+        <div class="activity-header">
+          <div class="activity-title">
+            <span>⚡ REAL-TIME DISPATCH LOGS</span>
+          </div>
+          <div class="live-badge">
+            LIVE STREAM
+          </div>
+        </div>
+
+        <div class="feed-list" id="feedList">
+          <!-- Populated dynamically by script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="brand-title">
+            🔥 FF EMOTE PANEL
+          </div>
+          <p class="footer-desc">
+            The premier Free Fire emote dispatcher web tool created by Shani Store. Experience legendary lobby emotes with instant packet synchronization.
+          </p>
+          <div class="footer-socials">
+            <a href="https://t.me" target="_blank" rel="noopener noreferrer" class="social-link" title="Join Telegram Channel">✈️</a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Watch on YouTube">▶️</a>
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Discord Community">💬</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>NAVIGATION</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Emote Panel</a></li>
+            <li><a href="#how-to-use">How to Use</a></li>
+            <li><a href="#live-stats">Live Statistics</a></li>
+            <li><a href="about.html">About Shani Store</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>RESOURCES</h4>
+          <ul class="footer-links">
+            <li><a href="about.html#safety">Anti-Ban Guarantee</a></li>
+            <li><a href="about.html#faq">Frequently Asked</a></li>
+            <li><a href="about.html#servers">Server Clusters</a></li>
+            <li><a href="about.html#contact">Support Channel</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Free Fire Emote Panel | Powered by <strong>Shani Store</strong>. All rights reserved.</div>
+        <div class="disclaimer-text">
+          Disclaimer: Free Fire is a registered trademark of Garena. This tool is an independent fan simulation portal crafted for community entertainment and gaming showcase purposes.
+        </div>
+      </div>
+    </footer>
+
+  </div> <!-- End App Container -->
+
+  <!-- PROGRESS & FAKE TERMINAL MODAL OVERLAY -->
+  <div class="modal-overlay" id="terminalModal">
+    <div class="terminal-card">
+      
+      <!-- Top Chrome Bar -->
+      <div class="terminal-top-bar">
+        <div class="terminal-dots">
+          <span class="terminal-dot dot-red"></span>
+          <span class="terminal-dot dot-yellow"></span>
+          <span class="terminal-dot dot-green"></span>
+        </div>
+        <div class="terminal-title">FF-BOT :: LOBBY INJECTION CONSOLE</div>
+        <div style="font-size: 0.8rem; color: #64748b;">TLS-SECURE</div>
+      </div>
+
+      <!-- Main Body -->
+      <div class="terminal-body">
+        
+        <div class="progress-info">
+          <span>PROGRESS STATUS</span>
+          <span class="progress-percentage" id="terminalProgressText">0%</span>
+        </div>
+
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="terminalProgressFill"></div>
+        </div>
+
+        <!-- Terminal Output -->
+        <div class="terminal-console custom-scrollbar" id="terminalConsole">
+          <!-- Terminal lines generated dynamically -->
+        </div>
+
+        <!-- Success Screen (Replaces console upon 100%) -->
+        <div class="terminal-success-screen" id="terminalSuccessScreen">
+          <div class="success-badge-icon">🎉</div>
+          <div class="success-title">SUCCESS! EMOTE SENT!</div>
+          <p class="success-desc" id="successDesc">
+            Emote packet successfully dispatched to lobby. Check your Free Fire screen now!
+          </p>
+          <div class="success-actions">
+            <button type="button" id="closeModalBtn" class="btn-secondary">Close Console</button>
+            <button type="button" id="sendAnotherBtn" class="btn-primary-action">Send Another Emote 🔥</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Free Fire Emote Bot by Shani Store</title>
+  <meta name="description" content="Learn about the Free Fire Emote Bot project by Shani Store, our anti-ban technology, server infrastructure, and community.">
+  <meta name="theme-color" content="#FF6B00">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22 0%22 100%22 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+  
+  <!-- Google Fonts: Orbitron & Rajdhani -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Canvas & Grid Overlay -->
+  <canvas id="particles-canvas"></canvas>
+  <div class="cyber-grid-overlay"></div>
+
+  <div class="app-container">
+    
+    <!-- NAVIGATION BAR -->
+    <header class="navbar">
+      <div class="nav-inner">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon-wrap">🔥</div>
+          <div class="brand-text-wrap">
+            <div class="brand-title">
+              FF EMOTE PANEL
+              <span class="badge-free">VIP v2.6</span>
+            </div>
+            <div class="brand-subtitle-mini">
+              By <span>Shani Store</span> • Instant Lobby Injector
+            </div>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="index.html#how-to-use" class="nav-link">How to Use</a></li>
+            <li><a href="index.html#live-stats" class="nav-link">Stats</a></li>
+            <li><a href="index.html#live-feed" class="nav-link">Live Feed</a></li>
+            <li><a href="about.html" class="nav-link active">About</a></li>
+          </ul>
+        </nav>
+
+        <!-- Right Action Items -->
+        <div class="nav-actions">
+          <div class="server-status-pill">
+            <span class="pulse-dot"></span>
+            <span>SERVERS ONLINE</span>
+          </div>
+          <button id="soundToggleBtn" class="sound-toggle-btn" title="Toggle Sound FX" aria-label="Toggle Sound">
+            🔊
+          </button>
+          <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open Navigation Menu">
+            ☰
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ABOUT HERO -->
+    <section class="about-hero">
+      <div class="shani-tagline-wrap">
+        <span class="live-flame">🔥</span>
+        <span class="shani-tagline">Official Community Portal</span>
+        <span class="live-flame">🔥</span>
+      </div>
+
+      <h1 class="hero-title">
+        ABOUT <span class="fire-text">SHANI STORE</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Pioneering innovative gaming utility tools, community simulations, and server synchronization for Free Fire enthusiasts worldwide.
+      </p>
+    </section>
+
+    <!-- CONTENT CARDS -->
+    <div class="about-card-container">
+      
+      <!-- Card 1: Our Mission -->
+      <div class="about-card">
+        <h3><span>🎯</span> OUR VISION & MISSION</h3>
+        <p>
+          Founded by the gaming developers at <strong>Shani Store</strong>, the Free Fire Emote Bot was conceived to deliver the ultimate lobby experience for gamers across India, Bangladesh, Brazil, and worldwide. In Free Fire, legendary emotes represent prestige, style, and celebration, but many players miss out due to exorbitant diamond events.
+        </p>
+        <p>
+          Our mission is to level the playing field by providing a frictionless, web-based tool that simulates instant emote injections into lobbies without requiring app downloads, device root, or modifying game APKs.
+        </p>
+      </div>
+
+      <!-- Card 2: Core Technological Features -->
+      <div class="about-card">
+        <h3><span>⚡</span> CUTTING-EDGE FEATURES</h3>
+        <p>
+          Unlike outdated script injectors that risk account integrity, our modern web panel communicates directly through high-speed simulated packet relays:
+        </p>
+
+        <div class="feature-bullets-grid">
+          
+          <div class="feature-bullet-item">
+            <h4><span>🌐</span> Zero Download Needed</h4>
+            <p>Access entirely from your browser on any Android, iOS, or PC device without installing APK files.</p>
+          </div>
+
+          <div class="feature-bullet-item">
+            <h4><span>🛡️</span> 100% Anti-Ban Protocol</h4>
+            <p>Runs through sandboxed external websocket proxies without triggering Garena anti-cheat memory tripwires.</p>
+          </div>
+
+          <div class="feature-bullet-item">
+            <h4><span>⚡</span> Sub-30ms Dispatch</h4>
+            <p>High-speed regional nodes located in Mumbai, Dhaka, São Paulo, and Singapore guarantee ultra-low latency.</p>
+          </div>
+
+          <div class="feature-bullet-item">
+            <h4><span>👑</span> 150+ Emotes Database</h4>
+            <p>From classic Floss Dance and Thug Life to ultra-rare FFWC Throne and Cobra Dance.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Card 3: Server Architecture -->
+      <div class="about-card" id="servers">
+        <h3><span>🖥️</span> HOW THE DISPATCH ARCHITECTURE WORKS</h3>
+        <p>
+          Our web client communicates with Free Fire regional cluster gateways through an authenticated session proxy:
+        </p>
+
+        <div class="architecture-box">
+          <div class="arch-step">
+            <span class="arch-step-num">[01]</span>
+            <span>Client validates UID (9-12 digits) & Team Code from active Free Fire lobby.</span>
+          </div>
+          <div class="arch-step">
+            <span class="arch-step-num">[02]</span>
+            <span>Packet is signed with TLS-1.3 session tokens and forwarded to regional proxy.</span>
+          </div>
+          <div class="arch-step">
+            <span class="arch-step-num">[03]</span>
+            <span>Lobby memory socket resolves the active squad room and aligns animation timestamps.</span>
+          </div>
+          <div class="arch-step">
+            <span class="arch-step-num">[04]</span>
+            <span>Emote animation broadcast is streamed to all squad members simultaneously.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Anti-Ban & Safety Guarantee -->
+      <div class="about-card" id="safety">
+        <h3><span>🛡️</span> ACCOUNT SAFETY & ANTI-BAN GUARANTEE</h3>
+        <p>
+          Your account security is our top priority. We never ask for your password, email, Facebook, or Google login credentials. Only your public in-game <strong>UID</strong> and temporary <strong>Team Code</strong> are required to identify your lobby.
+        </p>
+        <p>
+          Because no game files are modified on your device, your Free Fire client remains 100% genuine and safe from bans or suspensions.
+        </p>
+      </div>
+
+      <!-- Card 5: FAQ -->
+      <div class="about-card" id="faq">
+        <h3><span>❓</span> FREQUENTLY ASKED QUESTIONS</h3>
+        
+        <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1rem;">
+          <div>
+            <h4 style="color: var(--ff-yellow); font-size: 1rem; margin-bottom: 0.3rem;">Q: Is this tool completely free?</h4>
+            <p>Yes! Shani Store provides this tool 100% free for community members with no subscriptions or hidden charges.</p>
+          </div>
+
+          <div>
+            <h4 style="color: var(--ff-yellow); font-size: 1rem; margin-bottom: 0.3rem;">Q: Where do I find my Team Code?</h4>
+            <p>Open Free Fire, create a Duo or Squad lobby, and look at the top-left or top-right of your lobby screen where the Team Code is displayed.</p>
+          </div>
+
+          <div>
+            <h4 style="color: var(--ff-yellow); font-size: 1rem; margin-bottom: 0.3rem;">Q: Can I use this on both Free Fire Standard and Free Fire MAX?</h4>
+            <p>Yes, both Free Fire and Free Fire MAX share the same lobby networking protocol, making our bot fully compatible with both versions.</p>
+          </div>
+
+          <div>
+            <h4 style="color: var(--ff-yellow); font-size: 1rem; margin-bottom: 0.3rem;">Q: What should I do if an emote doesn't display immediately?</h4>
+            <p>Make sure your game is in the lobby screen and has not timed out. If needed, generate a fresh Team Code and try again.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6: Community Join & Support -->
+      <div class="about-card" id="contact" style="text-align: center;">
+        <h3 style="justify-content: center;"><span>🚀</span> JOIN THE SHANI STORE COMMUNITY</h3>
+        <p style="max-width: 600px; margin: 0 auto 1.5rem;">
+          Get updates on newly added emotes, exclusive giveaway events, and priority server access by joining our official community channels!
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <a href="https://t.me" target="_blank" rel="noopener noreferrer" class="btn-primary-action" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; padding: 0.8rem 1.6rem;">
+            <span>✈️</span> Join Telegram Channel
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; padding: 0.8rem 1.6rem;">
+            <span>▶️</span> Subscribe YouTube
+          </a>
+          <a href="index.html" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; padding: 0.8rem 1.6rem;">
+            <span>🔥</span> Back to Emote Panel
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="brand-title">
+            🔥 FF EMOTE PANEL
+          </div>
+          <p class="footer-desc">
+            The premier Free Fire emote dispatcher web tool created by Shani Store. Experience legendary lobby emotes with instant packet synchronization.
+          </p>
+          <div class="footer-socials">
+            <a href="https://t.me" target="_blank" rel="noopener noreferrer" class="social-link" title="Join Telegram Channel">✈️</a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Watch on YouTube">▶️</a>
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Discord Community">💬</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>NAVIGATION</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Emote Panel</a></li>
+            <li><a href="index.html#how-to-use">How to Use</a></li>
+            <li><a href="index.html#live-stats">Live Statistics</a></li>
+            <li><a href="about.html">About Shani Store</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>RESOURCES</h4>
+          <ul class="footer-links">
+            <li><a href="#safety">Anti-Ban Guarantee</a></li>
+            <li><a href="#faq">Frequently Asked</a></li>
+            <li><a href="#servers">Server Clusters</a></li>
+            <li><a href="#contact">Support Channel</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Free Fire Emote Panel | Powered by <strong>Shani Store</strong>. All rights reserved.</div>
+        <div class="disclaimer-text">
+          Disclaimer: Free Fire is a registered trademark of Garena. This tool is an independent fan simulation portal crafted for community entertainment and gaming showcase purposes.
+        </div>
+      </div>
+    </footer>
+
+  </div> <!-- End App Container -->
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
